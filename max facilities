@@ -1,0 +1,25 @@
+let saveData = localStorage.getItem("RetroBowl.0.savedata.ini");
+
+let updatedSave = saveData
+  .replace(/coach_rating="?(\d+)"?/, 'coach_rating="5"')
+  .replace(/fans="?(\d+)"?/, 'fans="100"')
+  .replace(/facility_stadium="?(\d+)"?/, 'facility_stadium="10"')
+  .replace(/facility_training="?(\d+)"?/, 'facility_training="10"')
+  .replace(/facility_rehab="?(\d+)"?/, 'facility_rehab="10"')
+  .replace(/facility_upgraded_stadium="?(\d+)"?/, 'facility_upgraded_stadium="10"')
+  .replace(/facility_upgraded_training="?(\d+)"?/, 'facility_upgraded_training="10"')
+  .replace(/facility_upgraded_rehab="?(\d+)"?/, 'facility_upgraded_rehab="10"');
+
+localStorage.setItem("RetroBowl.0.savedata.ini", updatedSave);
+
+// Confirm updated values
+console.log("✅ Updated values:");
+console.log(updatedSave.match(/coach_rating="?(\d+)"?/));
+console.log(updatedSave.match(/fans="?(\d+)"?/));
+console.log(updatedSave.match(/facility_stadium="?(\d+)"?/));
+console.log(updatedSave.match(/facility_training="?(\d+)"?/));
+console.log(updatedSave.match(/facility_rehab="?(\d+)"?/));
+console.log(updatedSave.match(/facility_upgraded_stadium="?(\d+)"?/));
+console.log(updatedSave.match(/facility_upgraded_training="?(\d+)"?/));
+console.log(updatedSave.match(/facility_upgraded_rehab="?(\d+)"?/));
+
