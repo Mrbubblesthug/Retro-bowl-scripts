@@ -1,0 +1,13 @@
+let saveData = localStorage.getItem("RetroBowl.0.savedata.ini");
+
+// Replace both values
+let updatedSave = saveData
+  .replace(/coach_credit="?(\d+)"?/, 'coach_credit="100000"')
+  .replace(/purchased_credit="?(\d+)"?/, 'purchased_credit="100000"');
+
+// Save it back to localStorage
+localStorage.setItem("RetroBowl.0.savedata.ini", updatedSave);
+
+// Confirm updates
+console.log(updatedSave.match(/coach_credit="?(\d+)"?/));
+console.log(updatedSave.match(/purchased_credit="?(\d+)"?/));
